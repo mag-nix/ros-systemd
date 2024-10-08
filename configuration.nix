@@ -1,8 +1,10 @@
-{ config, lib, nixpkgs, nix-ros-overlay }:
+{ config, lib, nixpkgs, nix-ros-overlay, ... }:
 {
   imports = [
     <nixpkgs/nixos/modules/virtualisation/google-compute-image.nix>
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.ros = {
     enable = true;
@@ -25,4 +27,6 @@
       };
     };
   };
+
+  system.stateVersion = "24.05";
 }

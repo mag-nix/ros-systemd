@@ -5,10 +5,14 @@
     nixpkgs.follows = "nix-ros-overlay/nixpkgs"; # Usage of different nixpkgs for fixes and adaptions
   };
 
-  outputs = { self, nixpkgs, nix-ros-overlay }: {
-    nixosConfigurations.nixos-robot-1 = pkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, nix-ros-overlay, ... }@attrs: {
+    nixosConfigurations.nixos-robot-1 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./configuration.nix ];
+      specialArgs = attrs;
+      modules = [
+        nix-ros-overlay.nixosModules.default
+        ./configuration.nix
+      ];
     };
   };
 
