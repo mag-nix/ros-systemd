@@ -9,6 +9,10 @@
   services.ros = {
     enable = true;
     distro = "noetic";
+
+    masterUri = "https://localhost:11311/";
+    hostname = "localhost";
+
     overlays = [
       nix-ros-overlay.overlays.default
     ];
