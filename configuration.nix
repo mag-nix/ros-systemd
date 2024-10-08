@@ -21,12 +21,12 @@
 
     nodes = {
       talker = {
-        package = "rospy-tutorials";
+        package = "rospy_tutorials";
         node = "talker";
       };
 
       listener = {
-        package = "rospy-tutorials";
+        package = "rospy_tutorials";
         node = "listener";
       };
     };
