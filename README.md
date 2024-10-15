@@ -3,9 +3,15 @@
 - This installs ros and the ros packages declared in `systemPackages`
 - Sets up systemd services for the `roscore`, `talker` and `listener`
 
+## Learning Goals
+
+- Have a look at how NixOS declares services https://github.com/mag-nix/ros-systemd/blob/main/configuration.nix
+
+- Observe the difference between the Nix Package itself and the ROS Package provided by the Nix Package
+
 ## Usage
 
-- Log into NixOS GCE VM
+- Log into a NixOS GCE VM
 
 ``` bash
 git clone https://github.com/mag-nix/ros-systemd.git
